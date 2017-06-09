@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+  <head>
+    <title>Senati</title>
+    <meta charset="utf-8"/>
+     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="css/senati.css"/>
+  </head>
+  <body>
+    <section id="portada" class="portada background"> <!-- portada -->
+      <header id="header" class="header-contenedor"> <!-- header -->
+        <figure class="logotipo"> <!-- logotipo -->
+          <img src="images/logo.png" width="200" height="100" alt="Senati logotipo"/>
+        </figure>
+         <span class="burguer-button icon-menu" id="burguer-button"></span>
+        <nav class="menu"> <!-- menu -->
+          <ul>
+            <li>
+              <a href="index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="#cursos">Modulos</a>
+            </li>
+            <li>
+              <a href="precios.html">Precios</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="contenedor-titulo">
+        <h1 class="titulo">Especializate en <br> <span>ETI</span> - Satipo</h1><!-- titulo -->
+        <h3 class="title-a">Sé el profesional que siempre quisiste ser</h3><!-- resumen -->
+        <a class="button" href="#cursos">Conoce mas</a><!-- boton -->
+      </div>     
+    </section>
+    <section id="cursos" class="cursos-contenedor"> <!-- cursos -->
+      <h2>Nuestros Cursos:</h2><!-- titulo -->
+      <article class="curso"> <!-- cursos 1 -->
+        <img class="derecha" src="images/office.png" alt="Office" width="350"/>
+        <div class="contenedor-curso1">
+          <h3 class="title-b">Experto en Microsoft Office</h3>
+          <ol>
+            <li>Diseñando Documentos con Microsoft Word</li>
+            <li>Microsoft Excel Aplicado a los Negocios</li>
+            <li>Presentaciones de Impacto con Microsoft PowerPoint</li>
+            <li>Gestión de Datos con Microsoft Access</li>
+            <li>Taller de Proyectos Empresariales con Microsoft Project </li>
+          </ol>
+        </div> 
+      </article>
+      <article class="curso"> <!-- cursos 2 -->
+        <img class="izquierda" src="images/diseno1.png" alt="Diseño Grafico" width="350"/>
+        <div class="contenedor-curso2">
+           <h3 class="title-b">Diseño gráfico a alto nivel</h3>
+          <ol>
+            <li>Photoshop tus primeros pasos</li>
+            <li>Corel Draw, y la magia gráfica</li>
+            <li>Adobe en toda sus extension</li>
+          </ol>
+        </div>
+      </article>
+      <article class="curso"> <!-- cursos 3 -->
+        <img class="derecha" src="images/dw.jpg" alt="Analista Programador" width="350"/>
+        <div class="contenedor-curso3">
+          <h3 class="title-b">Desarrollador Profesional de software</h3>
+          <ol>
+            <li>Asistente de Analista de sistemas</li>
+            <li>Analista de sistemas</li>
+            <li>Administrador de Base de datos</li>
+            <li>Desarrollador de aplicaciones</li>
+          </ol>
+        </div>     
+      </article>
+    </section>
+     <footer class="footer">
+      <div class="contenedor">
+        <div class="contacto">
+          <img src="images/logo1.png" alt="logotipo blanco"/>
+          <a href="tel:+51954001083"><strong>Telefono</strong> <span>954001083</span></a>
+          <a href="mailto:contacto@senati.pe"><strong>E-mail</strong> <span>contacto@senati.pe</span></a>
+        </div>
+        <form class="formulario">
+          <div class="col1">
+            <label for="nombre">Nombre</label>
+            <input type="text" required id="nombre" name="nombre"/>
+            <label for="email">E-mail</label>
+            <input type="email" required id="email" name="email"/>
+            <div class="sexo">
+              <label for="mujer">
+                <input type="radio" id="mujer" checked name="sexo" value="mujer"> mujer
+              </label>
+              <label for="hombre">
+                <input type="radio" id="hombre" name="sexo" value="hombre"> hombre
+              </label>
+            </div>
+            <div class="intereses">
+              <label for="cotizacion">
+                <input type="checkbox" checked id="cotizacion" name="intereses" value="cotizacion"> Cotización
+              </label>
+              <label for="reclamos">
+                <input type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
+              </label>
+              <label for="comentarios">
+                <input type="checkbox" id="comentarios" name="intereses" value="comantarios"> Comentarios
+              </label>
+              <label for="otros">
+                <input type="checkbox" id="otros" name="intereses" value="otros"> Otros
+              </label>
+            </div>
+          </div>
+          <div class="col2">
+            <label for="comentarios">Comentarios</label>
+            <textarea name="comantarios" id="comentarios" cols="30" rows="7"></textarea>
+            <input type="submit" value="Enviar" class="button"/>
+          </div>
+        </form>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Montserrat:400,700:latin', 'Allerta::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.7/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.4/blazy.min.js"></script>
+    <script>
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+
+      var $burguerButton = document.getElementById('burguer-button');
+      var $menu = document.getElementById('menu');
+      function toggleMenu(){
+        $menu.classList.toggle('active')
+      };
+      function showMenu(){
+        $menu.classList.add('active');
+      };
+      function hideMenu(){
+        $menu.classList.remove('active');
+      };
+
+      function mediaQuery() {
+        if (consulta.matches) {
+          // si se cumple hagamos esto
+          console.log('se cumplió la condicion');
+          $burguerButton.addEventListener('touchstart', toggleMenu);
+        } else {
+          $burguerButton.removeEventListener('touchstart', toggleMenu);
+          // si no se cumple hagamos esto
+          console.log('no se cumplió la condicion');
+        }
+      }
+      mediaQuery();
+
+      // lazy loading
+      var bLazy = new Blazy({
+          selector: 'img'
+      });
+      //$burguerButton.addEventListener('touchstart', toggleMenu);
+
+      // function toggleMenu(){
+      //   $menu.classList.toggle('active')
+      // };
+
+      // Gestos touch
+      var $body = document.body;
+
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', hideMenu);
+      gestos.on('swiperight', showMenu);
+    </script>
+
+  </body>
+</html>
